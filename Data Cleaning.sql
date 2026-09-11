@@ -27,7 +27,7 @@ with Duplicate_cte as
 select *,
 row_number() over(
 partition by 
-company,location,industry,stage,country,funds_raised_millions,percentage_laid_off,`date`) as rows_num
+company, location, industry, stage, country,funds_raised_millions,percentage_laid_off, `date`) as rows_num
 from layoffs_staging
 )
 select * 
@@ -44,7 +44,7 @@ insert layoffs_staging2
 select *,
 row_number() over(
 partition by 
-company,location,industry,stage,country,funds_raised_millions,percentage_laid_off,`date`) as rows_num
+company, location, industry, stage, country,funds_raised_millions,percentage_laid_off, `date`) as rows_num
 from layoffs_staging;
 
 select * from layoffs_staging2
