@@ -16,22 +16,22 @@ from layoffs_staging2
 group by company
 order by 2 desc;
 
-select max(`date`),min(`date`)
+select max(`date`), min(`date`)
 from layoffs_staging2;
 
 
-select industry,sum(total_laid_off)
+select industry, sum(total_laid_off)
 from layoffs_staging2
 group by industry
 order by 2 desc;
 
 
-select country ,sum(total_laid_off)
+select country, sum(total_laid_off)
 from layoffs_staging2
 group by country
 order by 2 desc;
 
-select year(`date`),sum(total_laid_off)
+select year(`date`), sum(total_laid_off)
 from layoffs_staging2
 group by year(`date`)
 order by 1 desc;
@@ -70,7 +70,7 @@ from layoffs_staging2
 group by company,year(`date`)
 order by 3 desc;
 
-with Rank_number (company,years,total_laid_off) as 
+with Rank_number (company, years,total_laid_off) as 
 (
 select company ,year(`date`),sum(total_laid_off)
 from layoffs_staging2
