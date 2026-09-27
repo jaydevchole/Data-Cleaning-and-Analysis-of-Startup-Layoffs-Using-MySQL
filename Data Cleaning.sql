@@ -62,7 +62,7 @@ select * from layoffs_staging2;
  from layoffs_staging2;
  
  update layoffs_staging2
- set compamy = trim(company);
+ set company = trim(company);
  
  select *
  from layoffs_staging2
